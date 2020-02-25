@@ -32,6 +32,7 @@ server.get("/", function(req, res) {
     db.query(`SELECT * FROM donors`, function(err, result) {
         if (err) return res.send("Erro de bando de dados")
     const donors = result.rows
+    console.log(donors)
     return res.render("index.html", { donors })
     })
 })
